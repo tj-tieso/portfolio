@@ -1,4 +1,5 @@
 import React from "react";
+// import heroImg from "../../assets/cover/heroImg.jpg";
 
 function Nav() {
   return (
@@ -14,8 +15,8 @@ function Nav() {
             </a>
           </li>
           <li>
-            <a data-testid="my-work" href="#my-work">
-              My Work
+            <a data-testid="portfolio" href="#portfolio">
+              Portfolio
             </a>
           </li>
           <li>
