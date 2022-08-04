@@ -1,18 +1,18 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import About from "..";
+import Nav from "..";
 
 afterEach(cleanup);
 
-describe("About Component", () => {
+describe("Nav Component", () => {
   it("renders", () => {
-    render(<About />);
+    render(<Nav />);
   });
 
   it("matches snapshot DOM node structure", () => {
     // asFragment functionreturns a snapshot of the tested component
-    const { asFragment } = render(<About />);
+    const { asFragment } = render(<Nav />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
