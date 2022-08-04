@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import About from "./components/About";
+import Contact from "./components/Contact";
 import Nav from "./components/Nav";
 import Portfolio from "./components/Portfolio";
 
@@ -23,6 +24,7 @@ function App() {
       <main>
         <About></About>
         <Portfolio></Portfolio>
+        <Contact></Contact>
       </main>
     </div>
   );
