@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { capitalizeFirstLetter } from "../../utils/helpers";
 // import heroImg from "../../assets/cover/heroImg.jpg";
 
-function Nav() {
+function Nav(props) {
+  const { navCategories = [], setNavCategory, currentNavCategory } = props;
+
+  useEffect(() => {
+    document.title = capitalizeFirstLetter(currentNavCategory.name);
+  }, [currentNavCategory]);
+
   return (
     <header>
       <a data-testid="link" href="/">
@@ -9,21 +16,22 @@ function Nav() {
       </a>
       <nav>
         <ul>
-          <li>
-            <a data-testid="about" href="#about">
-              About
-            </a>
-          </li>
-          <li>
-            <a data-testid="portfolio" href="#portfolio">
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a data-testid="contact" href="#contact">
-              Contact
-            </a>
-          </li>
+          {navCategories.map((navCategory) => (
+            <li key={navCategory.name}>
+              <a
+                className={`${
+                  currentNavCategory.name === navCategory.name && "navActive"
+                }`}
+                onClick={() => {
+                  setNavCategory(navCategory);
+                }}
+                data-testid={navCategory.name}
+                href={`# ${navCategory.name}`}
+              >
+                {capitalizeFirstLetter(navCategory.name)}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

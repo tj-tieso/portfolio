@@ -11,26 +11,32 @@ exports[`Nav Component :  matches snapshot DOM node structure 1`] = `
     </a>
     <nav>
       <ul>
-        <li>
+        <li
+          class="navActive"
+        >
           <a
             data-testid="about"
-            href="#about"
+            href="# about"
           >
             About
           </a>
         </li>
-        <li>
+        <li
+          class="false"
+        >
           <a
             data-testid="portfolio"
-            href="#portfolio"
+            href="# portfolio"
           >
             Portfolio
           </a>
         </li>
-        <li>
+        <li
+          class="false"
+        >
           <a
             data-testid="contact"
-            href="#contact"
+            href="# contact"
           >
             Contact
           </a>

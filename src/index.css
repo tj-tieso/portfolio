@@ -75,3 +75,7 @@ li {
   margin-right: auto;
   width: 100%;
 }
+
+.navActive {
+  color: var(--accent-primary);
+}
