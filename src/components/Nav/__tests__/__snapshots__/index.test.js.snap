@@ -10,38 +10,7 @@ exports[`Nav Component :  matches snapshot DOM node structure 1`] = `
       Tieso
     </a>
     <nav>
-      <ul>
-        <li
-          class="navActive"
-        >
-          <a
-            data-testid="about"
-            href="# about"
-          >
-            About
-          </a>
-        </li>
-        <li
-          class="false"
-        >
-          <a
-            data-testid="portfolio"
-            href="# portfolio"
-          >
-            Portfolio
-          </a>
-        </li>
-        <li
-          class="false"
-        >
-          <a
-            data-testid="contact"
-            href="# contact"
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
+      <ul />
     </nav>
   </header>
 </DocumentFragment>

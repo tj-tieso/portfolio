@@ -11,25 +11,29 @@ function Nav(props) {
 
   return (
     <header>
-      <a data-testid="link" href="/">
-        Tieso
-      </a>
+      <h1>
+        <a data-testid="link" href="/">
+          Tieso
+        </a>
+      </h1>
       <nav>
         <ul>
           {navCategories.map((navCategory) => (
             <li key={navCategory.name}>
-              <a
-                className={`${
-                  currentNavCategory.name === navCategory.name && "navActive"
-                }`}
-                onClick={() => {
-                  setNavCategory(navCategory);
-                }}
-                data-testid={navCategory.name}
-                href={`# ${navCategory.name}`}
-              >
-                {capitalizeFirstLetter(navCategory.name)}
-              </a>
+              <h2>
+                <a
+                  className={`${
+                    currentNavCategory.name === navCategory.name && "navActive"
+                  }`}
+                  onClick={() => {
+                    setNavCategory(navCategory);
+                  }}
+                  data-testid={navCategory.name}
+                  href={`#${navCategory.name}`}
+                >
+                  {capitalizeFirstLetter(navCategory.name)}
+                </a>
+              </h2>
             </li>
           ))}
         </ul>

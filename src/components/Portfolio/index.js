@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import GitHubMark from "../../assets/icons/GitHub-Mark/PNG/GitHub-Mark-64px.png";
 
 function Portfolio() {
-  const projects = [
+  const [projects] = useState([
     {
       name: "SmartBook",
       link: "https://smartest-book.herokuapp.com/",
-      github: "",
+      github: "https://github.com/kylebreynolds/smart-book",
       image: "smart-book",
       description:
         "Team Project Built with JS, Handlebars, Express, and my MySql",
@@ -46,7 +46,8 @@ function Portfolio() {
     //   image: "project5",
     //   description: "",
     // },
-  ];
+  ]);
+
   return (
     <section className="portfolioBackdrop">
       {projects.map((project) => (
@@ -56,7 +57,11 @@ function Portfolio() {
             alt="project screenshot"
             src={require(`../../assets/projects/${project.image}.png`)}
           />
-          <h3 className="projectTitle">{project.name}</h3>
+          <h3 className="projectTitle">
+            <a href={project.link} target="_blank" rel="noreferrer">
+              {project.name}
+            </a>
+          </h3>
           <a href={project.github} target="_blank" rel="noreferrer">
             <img alt="github icon" src={GitHubMark} />
           </a>
