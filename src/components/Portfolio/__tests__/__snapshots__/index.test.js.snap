@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Portfolio Component :  matches snapshot DOM node structure 1`] = `
+<DocumentFragment>
+  <section
+    class="portfolioBackdrop"
+  >
+    <div
+      class="projectContainer"
+    >
+      <img
+        alt="project screenshot"
+        class="projectBackgroundImg"
+        src="smart-book.png"
+      />
+      <h3
+        class="projectTitle"
+      >
+        <a
+          href="https://smartest-book.herokuapp.com/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          SmartBook
+        </a>
+      </h3>
+      <a
+        href="https://github.com/kylebreynolds/smart-book"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="github icon"
+          src="GitHub-Mark-64px.png"
+        />
+      </a>
+      <p>
+        Team Project Built with JS, Handlebars, Express, and my MySql
+      </p>
+    </div>
+    <div
+      class="projectContainer"
+    >
+      <img
+        alt="project screenshot"
+        class="projectBackgroundImg"
+        src="blogged-down.png"
+      />
+      <h3
+        class="projectTitle"
+      >
+        <a
+          href="https://blogged-down.herokuapp.com/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Campaign Blog
+        </a>
+      </h3>
+      <a
+        href="https://github.com/tj-tieso/blogged-down"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="github icon"
+          src="GitHub-Mark-64px.png"
+        />
+      </a>
+      <p>
+        A blog for you Table Top Roll Playing game.
+      </p>
+    </div>
+  </section>
+</DocumentFragment>
+`;
