@@ -24,7 +24,7 @@ function Portfolio() {
     //   github: "https://github.com/tj-tieso/no-budge-budget",
     //   image: "budget",
     //   description: "An existing Mock Budget App, converted into a PWA",
-    // },
+    // }
     // {
     //   name: "Team Profile Generator",
     //   link: "https://github.com/tj-tieso/team-profile-gen",

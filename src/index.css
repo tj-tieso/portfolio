@@ -137,3 +137,11 @@ h3 a {
 .navActive {
   color: var(--accent-primary);
 }
+
+.homeActive {
+  color: var(--accent-primary);
+}
+
+.homeDefault {
+  color: var(--primary);
+}

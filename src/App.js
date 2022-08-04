@@ -13,6 +13,18 @@ function App() {
   ]);
 
   const [currentNavCategory, setNavCategory] = useState(navCategories[0]);
+  console.log(currentNavCategory.name);
+  const renderPage = () => {
+    if (currentNavCategory.name === "about") {
+      return <About />;
+    }
+    if (currentNavCategory.name === "portfolio") {
+      return <Portfolio />;
+    }
+    if (currentNavCategory.name === "contact") {
+      return <Contact />;
+    }
+  };
 
   return (
     <div>
@@ -21,11 +33,7 @@ function App() {
         setNavCategory={setNavCategory}
         currentNavCategory={currentNavCategory}
       ></Nav>
-      <main>
-        <About></About>
-        <Portfolio></Portfolio>
-        <Contact></Contact>
-      </main>
+      <main>{renderPage()}</main>
     </div>
   );
 }
