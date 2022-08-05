@@ -53,8 +53,8 @@ function Portfolio() {
       {/* start mapping */}
       {projects.map((project) => (
         <Card className="projectContainer" key={project.name}>
-          <Card.Body className="bg-light">
-            <Card.Title className="d-flex justify-content-between align-items-center border-bottom border-primary">
+          <Card.Body className="bg-light p-2">
+            <Card.Title className="d-flex justify-content-between align-items-center">
               <a href={project.link} target="_blank" rel="noreferrer">
                 {project.name}
               </a>
