@@ -1,0 +1,16 @@
+// @import "bootstrap/scss/functions";
+// @import "bootstrap/scss/variables";
+
+/* Change theme-colors */
+
+$light: #f1faee;
+$dark: #1d3557;
+$primary: #e63946;
+$secondary: #a8dadc;
+$info: #457b9d;
+$warning: #f5e74a;
+$danger: #820410;
+
+/* === Boostrap Main SCSS === */
+// @import "bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap.scss";

@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./App.css";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Nav from "./components/Nav";
+import NavComp from "./components/NavComp";
 import Portfolio from "./components/Portfolio";
+import "./custom.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [navCategories] = useState([
@@ -28,11 +30,11 @@ function App() {
 
   return (
     <div>
-      <Nav
+      <NavComp
         navCategories={navCategories}
         setNavCategory={setNavCategory}
         currentNavCategory={currentNavCategory}
-      ></Nav>
+      ></NavComp>
       <main>{renderPage()}</main>
     </div>
   );
