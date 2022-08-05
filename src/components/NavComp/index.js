@@ -35,6 +35,7 @@ function NavComp(props) {
                 }}
                 data-testid={navCategory.name}
                 href={`#${navCategory.name}`}
+                key={navCategory.name}
               >
                 {capitalizeFirstLetter(navCategory.name)}
               </Nav.Link>

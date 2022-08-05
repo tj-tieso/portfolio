@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import GitHubMark from "../../assets/icons/GitHub-Mark/PNG/GitHub-Mark-64px.png";
+import GitHubMark from "../../assets/icons/GitHub-Mark/PNG/GitHub-Mark-32px.png";
+import Card from "react-bootstrap/Card";
 
 function Portfolio() {
   const [projects] = useState([
@@ -8,8 +9,7 @@ function Portfolio() {
       link: "https://smartest-book.herokuapp.com/",
       github: "https://github.com/kylebreynolds/smart-book",
       image: "smart-book",
-      description:
-        "Team Project Built with JS, Handlebars, Express, and my MySql",
+      description: "Team Project Built with JS, Handlebars, Express, and MySql",
     },
     {
       name: "Campaign Blog",
@@ -50,23 +50,27 @@ function Portfolio() {
 
   return (
     <section className="portfolioBackdrop">
+      {/* start mapping */}
       {projects.map((project) => (
-        <div className="projectContainer" key={project.name}>
-          <img
+        <Card className="projectContainer" key={project.name}>
+          <Card.Body className="bg-light">
+            <Card.Title className="d-flex justify-content-between align-items-center border-bottom border-primary">
+              <a href={project.link} target="_blank" rel="noreferrer">
+                {project.name}
+              </a>
+              <a href={project.github} target="_blank" rel="noreferrer">
+                <img alt="github icon" src={GitHubMark} />{" "}
+              </a>
+            </Card.Title>{" "}
+            <Card.Text>{project.description}</Card.Text>
+          </Card.Body>
+          <Card.Img
+            variant="top"
             className="projectBackgroundImg"
             alt="project screenshot"
             src={require(`../../assets/projects/${project.image}.png`)}
           />
-          <h3 className="projectTitle">
-            <a href={project.link} target="_blank" rel="noreferrer">
-              {project.name}
-            </a>
-          </h3>
-          <a href={project.github} target="_blank" rel="noreferrer">
-            <img alt="github icon" src={GitHubMark} />
-          </a>
-          <p>{project.description}</p>
-        </div>
+        </Card>
       ))}
     </section>
   );
