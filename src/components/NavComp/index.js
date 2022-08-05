@@ -14,19 +14,21 @@ function NavComp(props) {
   }, [currentNavCategory]);
 
   return (
-    <Navbar bg="secondary" expand="lg">
+    <Navbar bg="secondary" expand="sm">
       <Container>
-        <Navbar.Brand data-testid="link" href="/">
+        <Navbar.Brand className="text-dark" data-testid="link" href="/">
           Tieso
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav bg-dark" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             {/* start mapping categories */}
             {navCategories.map((navCategory) => (
               <Nav.Link
                 className={`${
-                  currentNavCategory.name === navCategory.name && "navActive"
+                  (currentNavCategory.name === navCategory.name &&
+                    "text-danger") ||
+                  "text-dark"
                 }`}
                 onClick={() => {
                   setNavCategory(navCategory);
