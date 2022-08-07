@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { validateEmail } from "../../utils/helpers";
-// import Form from "react-bootstrap/Form";
+
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+// import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 function ContactForm() {
   // set default values of state
@@ -43,19 +48,21 @@ function ContactForm() {
   };
 
   return (
-    <section>
+    <Container className="w-75">
       <h1 data-testid="h1tag">Contact me</h1>
-      <form id="contact-form" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
+      <Form id="contact-form" onSubmit={handleSubmit}>
+        <Row>
+          <label column sm={2} htmlFor="name">
+            Name:
+          </label>
           <input
             type="text"
             name="name"
             defaultValue={name}
             onBlur={handleChange}
           />
-        </div>
-        <div>
+        </Row>
+        <Row>
           <label htmlFor="email">Email address:</label>
           <input
             type="email"
@@ -63,26 +70,27 @@ function ContactForm() {
             defaultValue={email}
             onBlur={handleChange}
           />
-        </div>
-        <div>
+        </Row>
+        <Row>
           <label htmlFor="message">Message:</label>
           <textarea
+            className="mb-2"
             name="message"
             rows="5"
             defaultValue={message}
             onBlur={handleChange}
           />
-        </div>
+        </Row>
         {errorMessage && (
-          <div>
+          <Row>
             <p className="error-text">{errorMessage}</p>
-          </div>
+          </Row>
         )}
-        <button data-testid="button" type="submit">
+        <Button data-testid="button" type="submit">
           Submit
-        </button>
-      </form>
-    </section>
+        </Button>
+      </Form>
+    </Container>
   );
 }
 
