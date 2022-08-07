@@ -54,14 +54,16 @@ function Portfolio() {
       {projects.map((project) => (
         <Card className="projectContainer" key={project.name}>
           <Card.Body className="bg-light p-2">
-            <Card.Title className="d-flex justify-content-between align-items-center">
-              <a href={project.link} target="_blank" rel="noreferrer">
-                {project.name}
-              </a>
-              <a href={project.github} target="_blank" rel="noreferrer">
-                <img alt="github icon" src={GitHubMark} />{" "}
-              </a>
-            </Card.Title>{" "}
+            <Card.Header>
+              <Card.Title className="d-flex justify-content-between align-items-center">
+                <a href={project.link} target="_blank" rel="noreferrer">
+                  {project.name}
+                </a>
+                <a href={project.github} target="_blank" rel="noreferrer">
+                  <img alt="github icon" src={GitHubMark} />{" "}
+                </a>
+              </Card.Title>{" "}
+            </Card.Header>
             <Card.Text>{project.description}</Card.Text>
           </Card.Body>
           <Card.Img

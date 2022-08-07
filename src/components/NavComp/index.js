@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
-
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -14,7 +13,11 @@ function NavComp(props) {
   }, [currentNavCategory]);
 
   return (
-    <Navbar bg="secondary" expand="sm">
+    <Navbar
+      style={{ paddingLeft: 10, paddingRight: 10 }}
+      bg="secondary"
+      expand="sm"
+    >
       <Navbar.Brand className="text-dark" data-testid="link" href="/">
         Tieso
       </Navbar.Brand>

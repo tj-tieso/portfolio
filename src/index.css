@@ -50,60 +50,14 @@ a:hover {
   text-decoration: underline;
 }
 
-.nav-container {
-  background-color: var(--secondary);
-  padding: 0.5rem;
-}
-
-/* .portfolioBackdrop {
-  display: flex;
-  align-items: stretch;
-  border: 2px solid var(--secondary);
-  border-radius: 10px;
-  background-image: url("../src/assets/cover/heroImg.jpg");
-} */
-
-/* .projectContainer {
-  margin: 0.5rem;
-  border: 4px solid var(--accent-primary);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-  background-color: var(--primary);
-  width: 90%;
-} */
-
-/* .projectTitle {
-  color: var(--accent-secondary);
-}
-
-.projectBackgroundImg {
-  display: block;
-  border-radius: 5px 5px 0px 0px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-.projectTitle {
-  border-top: 2px solid var(--accent-primary);
-}
-
-h3 a {
-  color: var(--accent-secondary);
-} */
-
 .navActive {
   color: var(--accent-primary);
 }
 
-.homeActive {
-  color: var(--accent-primary);
-}
-
-.homeDefault {
-  color: var(--primary);
-}
-
 .nav-list {
   margin-left: auto;
+}
+
+.projectContainer {
+  margin: 1rem;
 }
