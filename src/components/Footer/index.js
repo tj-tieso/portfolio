@@ -5,30 +5,19 @@ import linkedinMark from "../../assets/icons/linkedin-3-32.png";
 
 function Footer() {
   return (
-    <section class="w-100 footer-info">
-      <div class="footer-info-content">
+    <footer className="w-100 footer-info">
+      <div className="footer-info-content">
         <a
-          class="text-xs"
           href="https://www.linkedin.com/in/tj-tieso/"
           target="_blank"
           rel="noreferrer"
         >
           <img alt="linkedin icon" src={linkedinMark} />
         </a>
-        <a
-          class=""
-          href="https://github.com/tj-tieso"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://github.com/tj-tieso" target="_blank" rel="noreferrer">
           <img alt="github icon" src={GitHubMark} />
         </a>
-        <a
-          class=""
-          href="mailto:tj.tieso@gmail.com "
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="mailto:tj.tieso@gmail.com " target="_blank" rel="noreferrer">
           <img alt="email icon" src={emailMark} />
         </a>
         <div className="footer-bottom">
@@ -37,7 +26,7 @@ function Footer() {
           </p>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }
 
