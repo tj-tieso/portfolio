@@ -62,23 +62,28 @@ a:hover {
   margin: 1rem;
 }
 
-.contact-info {
+.footer-info {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  flex-direction: column;
   background-color: var(--accent-secondary);
   color: var(--secondary);
   border-top: 4px solid var(--accent-primary);
   padding: 0.5rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-.contact-info-content {
+.footer-info-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-around; */
 }
 
-.contact-info-content a {
-  display: flex;
+.footer-info-content a {
+  /* display: flex; */
   text-decoration: none;
   color: var(--secondary);
   padding: 10px;
