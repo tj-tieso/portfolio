@@ -50,6 +50,7 @@ function Portfolio() {
 
   return (
     <section className="portfolioBackdrop">
+      <h1>Projects</h1>
       {/* start mapping */}
       {projects.map((project) => (
         <Card className="projectContainer" key={project.name}>
