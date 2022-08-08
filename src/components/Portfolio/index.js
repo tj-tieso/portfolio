@@ -18,34 +18,34 @@ function Portfolio() {
       image: "blogged-down",
       description: "A blog for you Table Top Roll Playing game.",
     },
-    // {
-    //   name: "No Budge Budget",
-    //   link: "https://no-budge-budget.herokuapp.com/",
-    //   github: "https://github.com/tj-tieso/no-budge-budget",
-    //   image: "budget",
-    //   description: "An existing Mock Budget App, converted into a PWA",
-    // }
-    // {
-    //   name: "Team Profile Generator",
-    //   link: "https://github.com/tj-tieso/team-profile-gen",
-    //   github: "https://github.com/tj-tieso/team-profile-gen",
-    //   image: "team-profile",
-    //   description: "A CLI to generate contact cards for a team",
-    // },
-    // {
-    //   name: "Project 5",
-    //   link: "https://github.com/tj-tieso",
-    //   github: "https://github.com/tj-tieso",
-    //   image: "project5",
-    //   description: "",
-    // },
-    // {
-    //   name: "Project 6",
-    //   link: "https://github.com/tj-tieso",
-    //   github: "https://github.com/tj-tieso",
-    //   image: "project5",
-    //   description: "",
-    // },
+    {
+      name: "No Budge Budget",
+      link: "https://no-budge-budget.herokuapp.com/",
+      github: "https://github.com/tj-tieso/no-budge-budget",
+      image: "budget",
+      description: "An existing Mock Budget App, converted into a PWA",
+    },
+    {
+      name: "Readme Generator",
+      link: "https://github.com/tj-tieso/readme-gen",
+      github: "https://github.com/tj-tieso/readme-gen",
+      image: "readme-gen",
+      description: "A CLI to generate a README for your project.",
+    },
+    {
+      name: "Weather App",
+      link: "https://tj-tieso.github.io/weather-app/",
+      github: "https://github.com/tj-tieso/weather-app",
+      image: "weather-app",
+      description: "Server-Side API project. Built with JS, HTML, and CSS",
+    },
+    {
+      name: "Run Buddy",
+      link: "https://tj-tieso.github.io/run-buddy/",
+      github: "https://github.com/tj-tieso/run-buddy",
+      image: "run-buddy",
+      description: "My first front-end project, built with HTML and CSS",
+    },
   ]);
 
   return (

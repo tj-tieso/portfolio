@@ -36,7 +36,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="main-container">
       <NavComp
         navCategories={navCategories}
         setNavCategory={setNavCategory}
