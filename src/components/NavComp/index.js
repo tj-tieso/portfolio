@@ -18,7 +18,7 @@ function NavComp(props) {
       bg="secondary"
       expand="sm"
     >
-      <Navbar.Brand className="text-dark" data-testid="link" href="/">
+      <Navbar.Brand className="text-dark" data-testid="link" href="/portfolio">
         Tieso
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
