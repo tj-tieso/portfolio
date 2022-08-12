@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { validateEmail } from "../../utils/helpers";
-
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-// import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import emailjs from "@emailjs/browser";
 
 function ContactForm() {
   // set default values of state
@@ -15,14 +14,31 @@ function ContactForm() {
     message: "",
   });
 
+  const form = useRef();
+
   const [errorMessage, setErrorMessage] = useState("");
+
+  // destructure the formState object into its named properties
   const { name, email, message } = formState;
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    if (!errorMessage) {
-      console.log("Submit Form", formState);
-    }
+
+    emailjs
+      .sendForm(
+        "service_jmi1pjf",
+        "template_nj1l7vl",
+        form.current,
+        "zjPqHUjwZH_jK8ifi"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   // sync state
@@ -50,11 +66,9 @@ function ContactForm() {
   return (
     <Container className="w-75">
       <h1 data-testid="h1tag">Contact me</h1>
-      <Form id="contact-form" onSubmit={handleSubmit}>
+      <Form id="contact-form" ref={form} onSubmit={sendEmail}>
         <Row>
-          <label column sm={2} htmlFor="name">
-            Name:
-          </label>
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
             name="name"
