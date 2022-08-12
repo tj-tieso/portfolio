@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { validateEmail } from "../../utils/helpers";
-
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-// import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import emailjs from "@emailjs/browser";
 
 function ContactForm() {
   // set default values of state
@@ -15,61 +14,69 @@ function ContactForm() {
     message: "",
   });
 
-  const [errorMessage, setErrorMessage] = useState("");
-  const { name, email, message } = formState;
+  const form = useRef();
 
-  const handleSubmit = (e) => {
+  const [errorMessage, setErrorMessage] = useState("");
+
+  // destructure the formState object into its named properties
+  const { name, email, message } = formState;
+  const sendEmail = (e) => {
     e.preventDefault();
-    if (!errorMessage) {
-      console.log("Submit Form", formState);
+
+    if (!validateEmail(email)) {
+      setErrorMessage("Your email is invalid");
+      // return;
+    } else {
+      setErrorMessage("");
     }
+
+    emailjs
+      .sendForm(
+        "service_jmi1pjf",
+        "template_nj1l7vl",
+        form.current,
+        "zjPqHUjwZH_jK8ifi"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      )
+      .finally(() => {
+        setFormState({ name: "", email: "", message: "" });
+      });
   };
 
   // sync state
   const handleChange = (e) => {
-    if (e.target.name === "email") {
-      const isValid = validateEmail(e.target.value);
-      if (!isValid) {
-        setErrorMessage("Your email is invalid.");
-      } else {
-        setErrorMessage("");
-      }
+    if (!e.target.value.length) {
+      setErrorMessage(
+        `${e.target.name} is required. Press any key to close message.`
+      );
     } else {
-      if (!e.target.value.length) {
-        setErrorMessage(`${e.target.name} is required.`);
-      } else {
-        setErrorMessage("");
-      }
+      setErrorMessage("");
     }
+
     if (!errorMessage) {
       setFormState({ ...formState, [e.target.name]: e.target.value });
-      console.log("Handle Form", formState);
+      // console.log("Handle Form", formState);
     }
   };
 
   return (
     <Container className="w-75">
       <h1 data-testid="h1tag">Contact me</h1>
-      <Form id="contact-form" onSubmit={handleSubmit}>
+      <Form id="contact-form" ref={form} onSubmit={sendEmail}>
         <Row>
-          <label column sm={2} htmlFor="name">
-            Name:
-          </label>
-          <input
-            type="text"
-            name="name"
-            defaultValue={name}
-            onBlur={handleChange}
-          />
+          <label htmlFor="name">Name:</label>
+          <input type="text" name="name" value={name} onChange={handleChange} />
         </Row>
         <Row>
           <label htmlFor="email">Email address:</label>
-          <input
-            type="email"
-            name="email"
-            defaultValue={email}
-            onBlur={handleChange}
-          />
+          <input name="email" value={email} onChange={handleChange} />
         </Row>
         <Row>
           <label htmlFor="message">Message:</label>
@@ -77,12 +84,12 @@ function ContactForm() {
             className="mb-2"
             name="message"
             rows="5"
-            defaultValue={message}
-            onBlur={handleChange}
+            value={message}
+            onChange={handleChange}
           />
         </Row>
         {errorMessage && (
-          <Row>
+          <Row className="error-container mb-2">
             <p className="error-text">{errorMessage}</p>
           </Row>
         )}
