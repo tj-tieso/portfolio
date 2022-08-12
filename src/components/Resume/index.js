@@ -11,7 +11,12 @@ function Resume() {
         Programming (OOP) Model-View-Controller (MVC), Test Driven Development
         (TDD).
       </p>
-      <Button>Download Resume Here</Button>
+      <a
+        href={require("../../assets/tieso-resume.pdf")}
+        download="tieso-resume.pdf"
+      >
+        <Button>Download Resume Here</Button>
+      </a>
     </section>
   );
 }
