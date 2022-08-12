@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import About from "./components/About";
-import Contact from "./components/Contact";
+// import Contact from "./components/Contact";
 import NavComp from "./components/NavComp";
 import Portfolio from "./components/Portfolio";
 import Resume from "./components/Resume";
@@ -14,11 +14,11 @@ function App() {
     { name: "about" },
     { name: "portfolio" },
     { name: "resume" },
-    { name: "contact" },
+    // { name: "contact" },
   ]);
 
   const [currentNavCategory, setNavCategory] = useState(navCategories[0]);
-  console.log(currentNavCategory.name);
+  // console.log(currentNavCategory.name);
 
   const renderPage = () => {
     if (currentNavCategory.name === "about") {
@@ -27,9 +27,9 @@ function App() {
     if (currentNavCategory.name === "portfolio") {
       return <Portfolio />;
     }
-    if (currentNavCategory.name === "contact") {
-      return <Contact />;
-    }
+    // if (currentNavCategory.name === "contact") {
+    //   return <Contact />;
+    // }
     if (currentNavCategory.name === "resume") {
       return <Resume />;
     }

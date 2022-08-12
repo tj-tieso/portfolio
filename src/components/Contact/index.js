@@ -20,9 +20,15 @@ function ContactForm() {
 
   // destructure the formState object into its named properties
   const { name, email, message } = formState;
-
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (!validateEmail(email)) {
+      setErrorMessage("Your email is invalid");
+      // return;
+    } else {
+      setErrorMessage("");
+    }
 
     emailjs
       .sendForm(
@@ -38,28 +44,25 @@ function ContactForm() {
         (error) => {
           console.log(error.text);
         }
-      );
+      )
+      .finally(() => {
+        setFormState({ name: "", email: "", message: "" });
+      });
   };
 
   // sync state
   const handleChange = (e) => {
-    if (e.target.name === "email") {
-      const isValid = validateEmail(e.target.value);
-      if (!isValid) {
-        setErrorMessage("Your email is invalid.");
-      } else {
-        setErrorMessage("");
-      }
+    if (!e.target.value.length) {
+      setErrorMessage(
+        `${e.target.name} is required. Press any key to close message.`
+      );
     } else {
-      if (!e.target.value.length) {
-        setErrorMessage(`${e.target.name} is required.`);
-      } else {
-        setErrorMessage("");
-      }
+      setErrorMessage("");
     }
+
     if (!errorMessage) {
       setFormState({ ...formState, [e.target.name]: e.target.value });
-      console.log("Handle Form", formState);
+      // console.log("Handle Form", formState);
     }
   };
 
@@ -69,21 +72,11 @@ function ContactForm() {
       <Form id="contact-form" ref={form} onSubmit={sendEmail}>
         <Row>
           <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            name="name"
-            defaultValue={name}
-            onBlur={handleChange}
-          />
+          <input type="text" name="name" value={name} onChange={handleChange} />
         </Row>
         <Row>
           <label htmlFor="email">Email address:</label>
-          <input
-            type="email"
-            name="email"
-            defaultValue={email}
-            onBlur={handleChange}
-          />
+          <input name="email" value={email} onChange={handleChange} />
         </Row>
         <Row>
           <label htmlFor="message">Message:</label>
@@ -91,12 +84,12 @@ function ContactForm() {
             className="mb-2"
             name="message"
             rows="5"
-            defaultValue={message}
-            onBlur={handleChange}
+            value={message}
+            onChange={handleChange}
           />
         </Row>
         {errorMessage && (
-          <Row>
+          <Row className="error-container mb-2">
             <p className="error-text">{errorMessage}</p>
           </Row>
         )}

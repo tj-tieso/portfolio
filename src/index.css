@@ -85,3 +85,13 @@ footer {
   color: var(--secondary);
   padding: 10px;
 }
+
+.error-container {
+  /* background-color: var(--accent-secondary); */
+  border: 2px solid var(--accent-primary);
+}
+
+.error-text {
+  text-align: center;
+  font-weight: bold;
+}
